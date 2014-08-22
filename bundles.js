@@ -55,11 +55,10 @@
 	 * 生成合并拉取url 
 	 * 有效格式 http://{imgcache}/c/=/url1.js,url2.js.url3.js
 	 */
-
 	function getCombUrl(bundle){
 		var i, url = [], args,
 		
-		// todo 在多contexts中可能不支持.
+		// do not use RequireJS multiversion support/contexts..
 		args = require.s.contexts._.config.urlArgs;
 
 		if (args) {

@@ -8,7 +8,9 @@ A extensions used to set [config.bundles](http://www.requirejs.org/docs/api.html
 This extensions add a `bundles()` function to the `require` object. Pass the deps array to this function, it will 
 automatic set the `config.bundles` for requirejs, so that the dependence will be load in one request.
 
-It works with require.js 2.1.10 or later.
+##Restrictions
+* It must works with require.js 2.1.10 or later.
+* Do not used in multiversion contexts RequireJS.
 
 ##example
 
