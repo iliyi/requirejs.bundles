@@ -18,8 +18,6 @@
 				}
 				deps[i] = m[2];
 				b[idx].push(m[2]);
-			} else {
-				// console.log(deps[i]);
 			}
 		}
 
