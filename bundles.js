@@ -73,7 +73,7 @@
     function getCombUrl(bundle){
         var i, url = [], 
             c = require.s.contexts._.config,
-            args, baseUrl, host,
+            args, baseUrl, host = '',
             curl;
         
         // todo 在多contexts中可能不支持.
@@ -113,6 +113,6 @@
             setBundles(bundles);
         }
         return depsArray;
-    }
+    };
 
 })(require||this||window);

@@ -1,16 +1,16 @@
-#requirejs.bundles
+#requirejs.bundles#
 
 
 A extensions used to set [config.bundles](http://www.requirejs.org/docs/api.html#config-bundles) for requirejs automatic.
 
 
-##introduction
+##introduction##
 This extensions add a `bundles()` function to the `require` object. Pass the deps array to this function, it will 
 automatic set the `config.bundles` for requirejs, so that the dependence will be load in one request.
 
 It works with require.js 2.1.10 or later.
 
-##example
+##example##
 
 <pre>
 	define(
