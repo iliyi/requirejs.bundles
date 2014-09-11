@@ -10,6 +10,15 @@ automatic set the `config.bundles` for requirejs, so that the dependence will be
 
 It works with require.js 2.1.10 or later.
 
+##Configuration##
+It has a config object named `.bundleConfig` at the require.config() object.
+<pre>
+    {
+        noBundle : true, // Switch to no bundle mode. default: `false`
+        host : baseUrl  // the url concat host. defalut: `baseUrl host`
+    }
+</pre>
+
 ##example##
 
 <pre>

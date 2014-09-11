@@ -1,5 +1,20 @@
+/**
+ * A requirejs extensions;
+ * this extensions used to set [config.bundles](http://www.requirejs.org/docs/api.html#config-bundles) for requirejs automatic.
+ * This extensions add a `bundles()` function to the `require` object. Pass the deps array to this function, it will 
+ * automatic set the `config.bundles` for requirejs, so that the dependence will be load in one request.
+ * It works with require.js 2.1.10 or later.
+ * author: liyi
+ * config:
+ *  {
+        noBundle : true, // Switch to no bundle mode. default: `false`
+        host : baseUrl  // the url concat host. defalut: `baseUrl host`
+    }
+ */
+
 (function(exports) {
-    var bundles = [];
+    var bundles = [],
+        cfg = require.s.contexts._.config;
 
     /**
      * 提取bundles数据, 并将传入的depsArray恢复为requirejs的合法参数
@@ -72,14 +87,14 @@
 
     function getCombUrl(bundle){
         var i, url = [], 
-            c = require.s.contexts._.config,
             args, baseUrl, host = '',
             curl;
         
         // todo 在多contexts中可能不支持.
-        args = c.urlArgs;
-        baseUrl = c.baseUrl;
-        host = c.bundleHost.replace(/\/$/, '');
+        args = cfg.urlArgs;
+        baseUrl = cfg.baseUrl;
+
+        host = getHost();
 
         if (args) {
             require.config({urlArgs : ''});
@@ -104,9 +119,24 @@
         return curl;
     }
 
+    function getHost(){
+        var c = cfg.bundleConfig || {},
+            reg = /(http\:\/\/[^\/]*)(\/.*)?/,
+            h, m;
+
+        if ( h = c.host ) {
+            h = h.replace(/\/$/, '');
+        } else {
+            m = require.toUrl('').match(reg);
+            h = m[1];
+        }
+
+        return h;
+    }
+
 
     exports.bundles = function(depsArray) {
-        var c = require.s.contexts._.config;
+        var c = cfg.bundleConfig || {};
         bundles = getBundles(depsArray);
 
         if (!c.noBundle) {
