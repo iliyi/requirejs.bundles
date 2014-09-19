@@ -37,3 +37,4 @@ It has a config object named `.bundleConfig` at the require.config() object.
     	}
 	);
 </pre>
+
