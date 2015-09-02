@@ -1,6 +1,6 @@
 #requirejs.bundles
 
-A extensions used to set [config.bundles](http://www.requirejs.org/docs/api.html#config-bundles) for requirejs automatic.
+A extensions used to set [config.bundles](http://www.requirejs.org/docs/api.html#config-bundles) for requirejs automatically.
 
 
 ##Introduction
