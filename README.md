@@ -32,8 +32,8 @@ It has a config object named `.bundleConfig` at the require.config() object.
     	<b>require.bundles(</b>['jquery','<b>bundle!</b>mods/a, <b>bundle!</b>mods/b', '<b>bundle!1:</b>mods/c, <b>bundle!1:</b>mods/c']<b>)</b>,
     	
     	function($, a, b, c, d){
-            // mod a & mod b will be load from a combine url like http://example.com/c/=/mods/a.js,/mods/b.js
-            // same as mod c & mod d will be another bundles
+            // mod a &amp; mod b will be load from a combine url like http://example.com/c/=/mods/a.js,/mods/b.js
+            // same as mod c &amp; mod d will be another bundles
     	}
 	);
 </pre>
